@@ -81,8 +81,9 @@ WSGI_APPLICATION = 'startup_site.wsgi.application'
 
 DEBUG = config('DEBUG', default=True, cast=bool)
 
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='startupsite-production.up.railway.app', cast=Csv())
 import os
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost").split(",")
+# ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost").split(",")
 
 DATABASES = {
     'default': {
