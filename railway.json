@@ -1,0 +1,11 @@
+{
+    "build": {
+      "builder": "nixpacks",
+      "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    },
+    "deploy": {
+      "startCommand": "gunicorn startup_site.wsgi",
+      "restartPolicyType": "ON_FAILURE",
+      "restartPolicyMaxRetries": 10
+    }
+  }
